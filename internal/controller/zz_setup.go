@@ -30,6 +30,8 @@ import (
 	rbacpolicyv2 "github.com/crossplane-contrib/provider-openstack/internal/controller/networking/rbacpolicyv2"
 	routerinterfacev2 "github.com/crossplane-contrib/provider-openstack/internal/controller/networking/routerinterfacev2"
 	routerv2 "github.com/crossplane-contrib/provider-openstack/internal/controller/networking/routerv2"
+	secgrouprulev2 "github.com/crossplane-contrib/provider-openstack/internal/controller/networking/secgrouprulev2"
+	secgroupv2 "github.com/crossplane-contrib/provider-openstack/internal/controller/networking/secgroupv2"
 	subnetv2 "github.com/crossplane-contrib/provider-openstack/internal/controller/networking/subnetv2"
 	providerconfig "github.com/crossplane-contrib/provider-openstack/internal/controller/providerconfig"
 )
@@ -59,6 +61,8 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		rbacpolicyv2.Setup,
 		routerinterfacev2.Setup,
 		routerv2.Setup,
+		secgrouprulev2.Setup,
+		secgroupv2.Setup,
 		subnetv2.Setup,
 		providerconfig.Setup,
 	} {
