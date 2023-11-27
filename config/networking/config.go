@@ -30,4 +30,10 @@ func Configure(p *config.Provider) {
 			Type: "github.com/crossplane-contrib/provider-openstack/apis/identity/v1alpha1.ProjectV3",
 		}
 	})
+	p.AddResourceConfigurator("openstack_networking_secgroup_rule_v2", func(r *config.Resource) {
+		r.References["security_group_id"] = config.Reference{
+			Type: "SecGroupV2",
+		}
+	})
+	
 }
